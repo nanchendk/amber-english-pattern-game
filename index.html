@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>大長腿來闖關｜五大句型篇</title>
+<style>
+  :root{
+    --bg1:#fff8f4; --bg2:#ffe8f0; --card:#ffffff; --panel:#fff5f9;
+    --text:#3f2233; --muted:#9a6b81; --accent:#e84c8a; --accent2:#ffb3d1;
+    --heading:#c62f76; --good:#12a150; --bad:#e5484d; --line:#f3cad9;
+    --mint:#e6f7ef; --redbg:#fdecec; --gold:#e6a817;
+    --r-S:#2f6fed; --r-V:#e5484d; --r-O:#12a150; --r-C:#d9820a;
+    --r-IO:#8b5cf6; --r-DO:#0e9488; --r-P:#94748a; --r-M:#8a8f98;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Arial,sans-serif;background:linear-gradient(150deg,var(--bg1),var(--bg2));color:var(--text);min-height:100vh}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 16px 56px}
+  header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px}
+  .face{font-size:34px}
+  h1{font-size:30px;margin:0;color:var(--heading);text-shadow:0 2px 0 rgba(255,255,255,.75)}
+  .sub{color:var(--muted);font-size:13px;margin-top:2px}
+  .pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;color:var(--heading);font-size:14px;font-weight:800}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 12px 30px rgba(190,24,93,.10)}
+  .intro{line-height:1.9;font-size:15px}
+  .intro b{color:var(--heading)}
+  .patterns{font-family:ui-monospace,Menlo,Consolas,monospace;line-height:2.1;background:var(--panel);border-radius:12px;padding:10px 14px;font-size:14px}
+  .btn{border:none;border-radius:14px;padding:12px 20px;font-size:15px;font-weight:800;cursor:pointer;transition:.15s}
+  .btn-main{background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(232,76,138,.35)}
+  .btn-main:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--heading)}
+  .btn-ghost:hover{border-color:var(--accent2)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;color:var(--muted);transition:.12s;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .chip.on{background:var(--panel);border-color:var(--accent);color:var(--heading)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);justify-content:center;margin-top:8px}
+  .legend span b{font-size:12px}
+  .topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .refstrip{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:10px 0 4px;line-height:1.8}
+  .progress{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 14px}
+  .dot{width:22px;height:22px;border-radius:50%;background:#fbe0eb;color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1px solid var(--line);cursor:pointer}
+  .dot.cur{outline:2px solid var(--accent)}
+  .dot.right{background:var(--mint);color:var(--good);border-color:#bfe8cf}
+  .dot.wrong{background:var(--redbg);color:var(--bad);border-color:#f6c9ca}
+  .qbox{text-align:center;padding:8px 0 4px}
+  .qlabel{color:var(--muted);font-size:13px}
+  .sentence{font-size:29px;font-weight:800;margin:10px 0 4px}
+  .zh{color:var(--muted);font-size:16px;margin-bottom:12px}
+  .opts{display:flex;flex-direction:column;gap:9px;max-width:420px;margin:0 auto}
+  .opt{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px;font-size:16px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:1px;cursor:pointer;color:var(--text);transition:.12s}
+  .opt:hover:not(:disabled){border-color:var(--accent);transform:translateY(-1px)}
+  .opt:disabled{cursor:default}
+  .opt .name{font-size:11px;color:var(--muted);letter-spacing:0;margin-right:8px;font-family:inherit}
+  .opt.pick-right{background:var(--mint);border-color:var(--good);color:var(--good)}
+  .opt.pick-wrong{background:var(--redbg);border-color:var(--bad);color:var(--bad)}
+  .opt.reveal{border-color:var(--good);color:var(--good);box-shadow:0 0 0 2px var(--mint) inset}
+  .fb{margin:16px auto 0;max-width:560px;border-radius:16px;padding:14px 16px;text-align:left}
+  .fb.ok{background:var(--mint);border:1px solid #bfe8cf}
+  .fb.no{background:var(--redbg);border:1px solid #f6c9ca}
+  .fb .head{font-weight:800;margin-bottom:8px}
+  .fb.ok .head{color:var(--good)} .fb.no .head{color:var(--bad)}
+  .fb .note{color:var(--text);font-size:14px;line-height:1.7}
+  .analysis{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:6px 0 8px;padding:10px;background:#fff;border-radius:12px;border:1px solid var(--line)}
+  .tok{text-align:center;line-height:1.3}
+  .tok .w{font-size:19px;font-weight:800}
+  .tok .r{font-size:11px;font-weight:800;margin-top:2px;display:inline-block;padding:1px 6px;border-radius:6px;color:#fff}
+  .role-S .w{color:var(--r-S)} .role-S .r{background:var(--r-S)}
+  .role-V .w{color:var(--r-V)} .role-V .r{background:var(--r-V)}
+  .role-O .w{color:var(--r-O)} .role-O .r{background:var(--r-O)}
+  .role-C .w{color:var(--r-C)} .role-C .r{background:var(--r-C)}
+  .role-IO .w{color:var(--r-IO)} .role-IO .r{background:var(--r-IO)}
+  .role-DO .w{color:var(--r-DO)} .role-DO .r{background:var(--r-DO)}
+  .role-P .w{color:var(--r-P)} .role-P .r{background:var(--r-P)}
+  .role-M .w{color:var(--r-M)} .role-M .r{background:var(--r-M)}
+  .nav{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
+  .result{text-align:center;padding:12px}
+  .result .big{font-size:56px;margin:6px 0}
+  .result .score{font-size:22px;font-weight:800;color:var(--heading)}
+  .result .stars{font-size:40px;letter-spacing:4px;margin:8px 0}
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
+  .mini{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="face">👴</div>
+      <div>
+        <h1>大長腿來闖關</h1>
+        <div class="sub">英文五大句型篇 · 隨機 20 題挑戰</div>
+      </div>
+    </div>
+    <div class="pill">最佳 <span id="best">0</span> / 20</div>
+  </header>
+  <div id="app"></div>
+  <div class="foot">題庫共 200＋ 題，每次隨機抽 20 題、五大句型混合出題。答對綠色、答錯紅色會顯示正解與句子拆解。最佳成績存在這台裝置。</div>
+</div>
+
+<script>
+const TYPE_LABEL = {1:'S + V', 2:'S + V + O', 3:'S + V + C', 4:'S + V + IO + DO', 5:'S + V + O + C'};
+const TYPE_NAME  = {1:'句型 1', 2:'句型 2', 3:'句型 3', 4:'句型 4', 5:'句型 5'};
+const TYPE_NOTE  = {
+  1:'第一型 S + V：完全不及物動詞，後面不需要受詞或補語。',
+  2:'第二型 S + V + O：及物動詞後面接受詞，受詞是接受動作的人或物。',
+  3:'第三型 S + V + C：be 動詞或連綴動詞後面接補語，補充說明「主詞」。',
+  4:'第四型 S + V + IO + DO：授與動詞後面接兩個受詞——間接受詞（對象）＋直接受詞（東西）。',
+  5:'第五型 S + V + O + C：受詞後面再接補語，補充說明「受詞」。'
+};
+
+/* 角色: S V O C IO DO P(介系詞) M(修飾語/副詞) */
+const BANK = {
+1:[
+ {en:'Birds fly.',zh:'鳥會飛。',type:1,parts:[['Birds','S'],['fly','V']]},
+ {en:'She laughs.',zh:'她笑了。',type:1,parts:[['She','S'],['laughs','V']]},
+ {en:'The baby cries.',zh:'嬰兒哭了。',type:1,parts:[['The baby','S'],['cries','V']]},
+ {en:'Dogs bark.',zh:'狗會叫。',type:1,parts:[['Dogs','S'],['bark','V']]},
+ {en:'The sun rises.',zh:'太陽升起。',type:1,parts:[['The sun','S'],['rises','V']]},
+ {en:'We danced.',zh:'我們跳舞了。',type:1,parts:[['We','S'],['danced','V']]},
+ {en:'Fish swim.',zh:'魚會游泳。',type:1,parts:[['Fish','S'],['swim','V']]},
+ {en:'The bell rings.',zh:'鈴響了。',type:1,parts:[['The bell','S'],['rings','V']]},
+ {en:'He runs.',zh:'他在跑步。',type:1,parts:[['He','S'],['runs','V']]},
+ {en:'The children play.',zh:'孩子們在玩。',type:1,parts:[['The children','S'],['play','V']]},
+ {en:'My mom smiled.',zh:'我媽媽笑了。',type:1,parts:[['My mom','S'],['smiled','V']]},
+ {en:'The wind blows.',zh:'風在吹。',type:1,parts:[['The wind','S'],['blows','V']]},
+ {en:'It rained.',zh:'下雨了。',type:1,parts:[['It','S'],['rained','V']]},
+ {en:'The stars shine.',zh:'星星在發光。',type:1,parts:[['The stars','S'],['shine','V']]},
+ {en:'The leaves fell.',zh:'葉子掉了。',type:1,parts:[['The leaves','S'],['fell','V']]},
+ {en:'He sneezed.',zh:'他打噴嚏了。',type:1,parts:[['He','S'],['sneezed','V']]},
+ {en:'The train arrived.',zh:'火車到了。',type:1,parts:[['The train','S'],['arrived','V']]},
+ {en:'They waited.',zh:'他們等著。',type:1,parts:[['They','S'],['waited','V']]},
+ {en:'The phone rang.',zh:'電話響了。',type:1,parts:[['The phone','S'],['rang','V']]},
+ {en:'Everyone clapped.',zh:'大家鼓掌了。',type:1,parts:[['Everyone','S'],['clapped','V']]},
+ {en:'The horse jumped.',zh:'馬跳了起來。',type:1,parts:[['The horse','S'],['jumped','V']]},
+ {en:'My sister sang.',zh:'我姊姊唱歌了。',type:1,parts:[['My sister','S'],['sang','V']]},
+ {en:'The door opened.',zh:'門開了。',type:1,parts:[['The door','S'],['opened','V']]},
+ {en:'The ice melted.',zh:'冰融化了。',type:1,parts:[['The ice','S'],['melted','V']]},
+ {en:'The bird flew away.',zh:'鳥飛走了。',type:1,parts:[['The bird','S'],['flew','V'],['away','M']]},
+ {en:'We laughed together.',zh:'我們一起笑了。',type:1,parts:[['We','S'],['laughed','V'],['together','M']]},
+ {en:'The cat slept.',zh:'貓睡著了。',type:1,parts:[['The cat','S'],['slept','V']]},
+ {en:'The rain stopped.',zh:'雨停了。',type:1,parts:[['The rain','S'],['stopped','V']]},
+ {en:'Time passes.',zh:'時間流逝。',type:1,parts:[['Time','S'],['passes','V']]},
+ {en:'The plane landed.',zh:'飛機降落了。',type:1,parts:[['The plane','S'],['landed','V']]},
+ {en:'She yawned.',zh:'她打了個哈欠。',type:1,parts:[['She','S'],['yawned','V']]},
+ {en:'The crowd cheered.',zh:'群眾歡呼了。',type:1,parts:[['The crowd','S'],['cheered','V']]},
+ {en:'My grandpa napped.',zh:'我爺爺打了個盹。',type:1,parts:[['My grandpa','S'],['napped','V']]},
+ {en:'The balloon popped.',zh:'氣球爆了。',type:1,parts:[['The balloon','S'],['popped','V']]},
+ {en:'Everyone stood up.',zh:'大家站了起來。',type:1,parts:[['Everyone','S'],['stood','V'],['up','M']]},
+ {en:'The flowers bloomed.',zh:'花開了。',type:1,parts:[['The flowers','S'],['bloomed','V']]},
+ {en:'The river flows.',zh:'河水在流。',type:1,parts:[['The river','S'],['flows','V']]},
+ {en:'The boy shouted.',zh:'男孩大喊。',type:1,parts:[['The boy','S'],['shouted','V']]},
+ {en:'They arrived early.',zh:'他們早到了。',type:1,parts:[['They','S'],['arrived','V'],['early','M']]},
+ {en:'The puppy barked loudly.',zh:'小狗大聲叫。',type:1,parts:[['The puppy','S'],['barked','V'],['loudly','M']]}
+],
+2:[
+ {en:'I love you.',zh:'我愛你。',type:2,parts:[['I','S'],['love','V'],['you','O']]},
+ {en:'I read a book.',zh:'我讀了一本書。',type:2,parts:[['I','S'],['read','V'],['a book','O']]},
+ {en:'She eats an apple.',zh:'她吃一顆蘋果。',type:2,parts:[['She','S'],['eats','V'],['an apple','O']]},
+ {en:'He plays basketball.',zh:'他打籃球。',type:2,parts:[['He','S'],['plays','V'],['basketball','O']]},
+ {en:'We watch TV.',zh:'我們看電視。',type:2,parts:[['We','S'],['watch','V'],['TV','O']]},
+ {en:'The cat caught a mouse.',zh:'貓抓到一隻老鼠。',type:2,parts:[['The cat','S'],['caught','V'],['a mouse','O']]},
+ {en:'She wrote a letter.',zh:'她寫了一封信。',type:2,parts:[['She','S'],['wrote','V'],['a letter','O']]},
+ {en:'Mom made a cake.',zh:'媽媽做了一個蛋糕。',type:2,parts:[['Mom','S'],['made','V'],['a cake','O']]},
+ {en:'I like music.',zh:'我喜歡音樂。',type:2,parts:[['I','S'],['like','V'],['music','O']]},
+ {en:'We need water.',zh:'我們需要水。',type:2,parts:[['We','S'],['need','V'],['water','O']]},
+ {en:'He drives a car.',zh:'他開車。',type:2,parts:[['He','S'],['drives','V'],['a car','O']]},
+ {en:'They cleaned the room.',zh:'他們打掃了房間。',type:2,parts:[['They','S'],['cleaned','V'],['the room','O']]},
+ {en:'She drinks milk.',zh:'她喝牛奶。',type:2,parts:[['She','S'],['drinks','V'],['milk','O']]},
+ {en:'I have a dog.',zh:'我有一隻狗。',type:2,parts:[['I','S'],['have','V'],['a dog','O']]},
+ {en:'He kicked the ball.',zh:'他踢了球。',type:2,parts:[['He','S'],['kicked','V'],['the ball','O']]},
+ {en:'The girl drew a picture.',zh:'女孩畫了一幅畫。',type:2,parts:[['The girl','S'],['drew','V'],['a picture','O']]},
+ {en:'We built a sandcastle.',zh:'我們蓋了一座沙堡。',type:2,parts:[['We','S'],['built','V'],['a sandcastle','O']]},
+ {en:'She opened the window.',zh:'她打開了窗戶。',type:2,parts:[['She','S'],['opened','V'],['the window','O']]},
+ {en:'He broke the cup.',zh:'他打破了杯子。',type:2,parts:[['He','S'],['broke','V'],['the cup','O']]},
+ {en:'I found my keys.',zh:'我找到我的鑰匙了。',type:2,parts:[['I','S'],['found','V'],['my keys','O']]},
+ {en:'They planted a tree.',zh:'他們種了一棵樹。',type:2,parts:[['They','S'],['planted','V'],['a tree','O']]},
+ {en:'She washed the dishes.',zh:'她洗了碗。',type:2,parts:[['She','S'],['washed','V'],['the dishes','O']]},
+ {en:'We visited the museum.',zh:'我們參觀了博物館。',type:2,parts:[['We','S'],['visited','V'],['the museum','O']]},
+ {en:'He rides a bike.',zh:'他騎腳踏車。',type:2,parts:[['He','S'],['rides','V'],['a bike','O']]},
+ {en:'The dog chased the cat.',zh:'狗追那隻貓。',type:2,parts:[['The dog','S'],['chased','V'],['the cat','O']]},
+ {en:'I answered the question.',zh:'我回答了問題。',type:2,parts:[['I','S'],['answered','V'],['the question','O']]},
+ {en:'She wears a hat.',zh:'她戴著一頂帽子。',type:2,parts:[['She','S'],['wears','V'],['a hat','O']]},
+ {en:'We enjoyed the movie.',zh:'我們很喜歡那部電影。',type:2,parts:[['We','S'],['enjoyed','V'],['the movie','O']]},
+ {en:'He fixed the bike.',zh:'他修好了腳踏車。',type:2,parts:[['He','S'],['fixed','V'],['the bike','O']]},
+ {en:'They painted the fence.',zh:'他們油漆了籬笆。',type:2,parts:[['They','S'],['painted','V'],['the fence','O']]},
+ {en:'The chef cooked dinner.',zh:'廚師煮了晚餐。',type:2,parts:[['The chef','S'],['cooked','V'],['dinner','O']]},
+ {en:'I saw a rainbow.',zh:'我看到彩虹。',type:2,parts:[['I','S'],['saw','V'],['a rainbow','O']]},
+ {en:'She helped her mother.',zh:'她幫了她媽媽。',type:2,parts:[['She','S'],['helped','V'],['her mother','O']]},
+ {en:'We climbed the mountain.',zh:'我們爬了那座山。',type:2,parts:[['We','S'],['climbed','V'],['the mountain','O']]},
+ {en:'He carried the box.',zh:'他搬了箱子。',type:2,parts:[['He','S'],['carried','V'],['the box','O']]},
+ {en:'The farmer grows rice.',zh:'農夫種稻米。',type:2,parts:[['The farmer','S'],['grows','V'],['rice','O']]},
+ {en:'I know the answer.',zh:'我知道答案。',type:2,parts:[['I','S'],['know','V'],['the answer','O']]},
+ {en:'She met her friend.',zh:'她見了她的朋友。',type:2,parts:[['She','S'],['met','V'],['her friend','O']]},
+ {en:'We played a game.',zh:'我們玩了一個遊戲。',type:2,parts:[['We','S'],['played','V'],['a game','O']]},
+ {en:'He threw the ball.',zh:'他丟了球。',type:2,parts:[['He','S'],['threw','V'],['the ball','O']]}
+],
+3:[
+ {en:'He is cute.',zh:'他很可愛。',type:3,parts:[['He','S'],['is','V'],['cute','C']]},
+ {en:'She is a student.',zh:'她是學生。',type:3,parts:[['She','S'],['is','V'],['a student','C']]},
+ {en:'They are happy.',zh:'他們很開心。',type:3,parts:[['They','S'],['are','V'],['happy','C']]},
+ {en:'The soup smells good.',zh:'湯聞起來很香。',type:3,parts:[['The soup','S'],['smells','V'],['good','C']]},
+ {en:'The flowers look beautiful.',zh:'花看起來很美。',type:3,parts:[['The flowers','S'],['look','V'],['beautiful','C']]},
+ {en:'He became a doctor.',zh:'他成為醫生。',type:3,parts:[['He','S'],['became','V'],['a doctor','C']]},
+ {en:'She feels tired.',zh:'她覺得累。',type:3,parts:[['She','S'],['feels','V'],['tired','C']]},
+ {en:'The cake tastes sweet.',zh:'蛋糕嚐起來很甜。',type:3,parts:[['The cake','S'],['tastes','V'],['sweet','C']]},
+ {en:'I am a teacher.',zh:'我是老師。',type:3,parts:[['I','S'],['am','V'],['a teacher','C']]},
+ {en:'You are my friend.',zh:'你是我的朋友。',type:3,parts:[['You','S'],['are','V'],['my friend','C']]},
+ {en:'It is cold.',zh:'天氣很冷。',type:3,parts:[['It','S'],['is','V'],['cold','C']]},
+ {en:'The sky looks blue.',zh:'天空看起來很藍。',type:3,parts:[['The sky','S'],['looks','V'],['blue','C']]},
+ {en:'The music sounds nice.',zh:'音樂聽起來很好聽。',type:3,parts:[['The music','S'],['sounds','V'],['nice','C']]},
+ {en:'She is beautiful.',zh:'她很漂亮。',type:3,parts:[['She','S'],['is','V'],['beautiful','C']]},
+ {en:'He looks tired.',zh:'他看起來很累。',type:3,parts:[['He','S'],['looks','V'],['tired','C']]},
+ {en:'The milk went bad.',zh:'牛奶壞了。',type:3,parts:[['The milk','S'],['went','V'],['bad','C']]},
+ {en:'My dad is a police officer.',zh:'我爸爸是警察。',type:3,parts:[['My dad','S'],['is','V'],['a police officer','C']]},
+ {en:'The children are noisy.',zh:'孩子們很吵。',type:3,parts:[['The children','S'],['are','V'],['noisy','C']]},
+ {en:'This book is interesting.',zh:'這本書很有趣。',type:3,parts:[['This book','S'],['is','V'],['interesting','C']]},
+ {en:'The room is clean.',zh:'房間很乾淨。',type:3,parts:[['The room','S'],['is','V'],['clean','C']]},
+ {en:'He seems angry.',zh:'他似乎在生氣。',type:3,parts:[['He','S'],['seems','V'],['angry','C']]},
+ {en:'The weather turned cold.',zh:'天氣變冷了。',type:3,parts:[['The weather','S'],['turned','V'],['cold','C']]},
+ {en:'She grew old.',zh:'她變老了。',type:3,parts:[['She','S'],['grew','V'],['old','C']]},
+ {en:'The story sounds scary.',zh:'這故事聽起來很可怕。',type:3,parts:[['The story','S'],['sounds','V'],['scary','C']]},
+ {en:'I feel happy.',zh:'我覺得很開心。',type:3,parts:[['I','S'],['feel','V'],['happy','C']]},
+ {en:'They are teachers.',zh:'他們是老師。',type:3,parts:[['They','S'],['are','V'],['teachers','C']]},
+ {en:'The bread smells fresh.',zh:'麵包聞起來很新鮮。',type:3,parts:[['The bread','S'],['smells','V'],['fresh','C']]},
+ {en:'His idea is great.',zh:'他的點子很棒。',type:3,parts:[['His idea','S'],['is','V'],['great','C']]},
+ {en:'The water is warm.',zh:'水是溫的。',type:3,parts:[['The water','S'],['is','V'],['warm','C']]},
+ {en:'She looks sad.',zh:'她看起來很難過。',type:3,parts:[['She','S'],['looks','V'],['sad','C']]},
+ {en:'We are ready.',zh:'我們準備好了。',type:3,parts:[['We','S'],['are','V'],['ready','C']]},
+ {en:'The coffee tastes bitter.',zh:'咖啡嚐起來很苦。',type:3,parts:[['The coffee','S'],['tastes','V'],['bitter','C']]},
+ {en:'My grandma is kind.',zh:'我奶奶很和藹。',type:3,parts:[['My grandma','S'],['is','V'],['kind','C']]},
+ {en:'The dog is hungry.',zh:'狗餓了。',type:3,parts:[['The dog','S'],['is','V'],['hungry','C']]},
+ {en:'The leaves turned yellow.',zh:'葉子變黃了。',type:3,parts:[['The leaves','S'],['turned','V'],['yellow','C']]},
+ {en:'He is a firefighter.',zh:'他是消防員。',type:3,parts:[['He','S'],['is','V'],['a firefighter','C']]},
+ {en:'The night is quiet.',zh:'夜晚很安靜。',type:3,parts:[['The night','S'],['is','V'],['quiet','C']]},
+ {en:'The lemon tastes sour.',zh:'檸檬嚐起來很酸。',type:3,parts:[['The lemon','S'],['tastes','V'],['sour','C']]},
+ {en:'She stayed calm.',zh:'她保持冷靜。',type:3,parts:[['She','S'],['stayed','V'],['calm','C']]},
+ {en:'The house looks old.',zh:'房子看起來很舊。',type:3,parts:[['The house','S'],['looks','V'],['old','C']]}
+],
+4:[
+ {en:'He gave me a pencil.',zh:'他給我一支筆。',type:4,parts:[['He','S'],['gave','V'],['me','IO'],['a pencil','DO']]},
+ {en:'She told me a story.',zh:'她講了一個故事給我聽。',type:4,parts:[['She','S'],['told','V'],['me','IO'],['a story','DO']]},
+ {en:'She sent me a card.',zh:'她寄了一張卡片給我。',type:4,parts:[['She','S'],['sent','V'],['me','IO'],['a card','DO']]},
+ {en:'Mom bought me a toy.',zh:'媽媽買了一個玩具給我。',type:4,parts:[['Mom','S'],['bought','V'],['me','IO'],['a toy','DO']]},
+ {en:'He showed us the photos.',zh:'他給我們看照片。',type:4,parts:[['He','S'],['showed','V'],['us','IO'],['the photos','DO']]},
+ {en:'Dad taught us English.',zh:'爸爸教我們英文。',type:4,parts:[['Dad','S'],['taught','V'],['us','IO'],['English','DO']]},
+ {en:'The teacher asked me a question.',zh:'老師問我一個問題。',type:4,parts:[['The teacher','S'],['asked','V'],['me','IO'],['a question','DO']]},
+ {en:'She lent me a book.',zh:'她借我一本書。',type:4,parts:[['She','S'],['lent','V'],['me','IO'],['a book','DO']]},
+ {en:'I gave him a gift.',zh:'我給他一個禮物。',type:4,parts:[['I','S'],['gave','V'],['him','IO'],['a gift','DO']]},
+ {en:'He wrote her a letter.',zh:'他寫了一封信給她。',type:4,parts:[['He','S'],['wrote','V'],['her','IO'],['a letter','DO']]},
+ {en:'She made me a sandwich.',zh:'她做了一個三明治給我。',type:4,parts:[['She','S'],['made','V'],['me','IO'],['a sandwich','DO']]},
+ {en:'Grandma cooked us dinner.',zh:'奶奶煮了晚餐給我們。',type:4,parts:[['Grandma','S'],['cooked','V'],['us','IO'],['dinner','DO']]},
+ {en:'He handed me the ticket.',zh:'他把票遞給我。',type:4,parts:[['He','S'],['handed','V'],['me','IO'],['the ticket','DO']]},
+ {en:'She brought me some water.',zh:'她拿了一些水給我。',type:4,parts:[['She','S'],['brought','V'],['me','IO'],['some water','DO']]},
+ {en:'The waiter passed us the menu.',zh:'服務生把菜單遞給我們。',type:4,parts:[['The waiter','S'],['passed','V'],['us','IO'],['the menu','DO']]},
+ {en:'Dad read me a bedtime story.',zh:'爸爸唸了一個睡前故事給我聽。',type:4,parts:[['Dad','S'],['read','V'],['me','IO'],['a bedtime story','DO']]},
+ {en:'I sent her flowers.',zh:'我送她花。',type:4,parts:[['I','S'],['sent','V'],['her','IO'],['flowers','DO']]},
+ {en:'He offered me a seat.',zh:'他讓了一個位子給我。',type:4,parts:[['He','S'],['offered','V'],['me','IO'],['a seat','DO']]},
+ {en:'She showed me her drawing.',zh:'她給我看她的畫。',type:4,parts:[['She','S'],['showed','V'],['me','IO'],['her drawing','DO']]},
+ {en:'The boss paid him money.',zh:'老闆付錢給他。',type:4,parts:[['The boss','S'],['paid','V'],['him','IO'],['money','DO']]},
+ {en:'My uncle gave us candy.',zh:'我叔叔給了我們糖果。',type:4,parts:[['My uncle','S'],['gave','V'],['us','IO'],['candy','DO']]},
+ {en:'She sang the baby a song.',zh:'她唱了一首歌給寶寶聽。',type:4,parts:[['She','S'],['sang','V'],['the baby','IO'],['a song','DO']]},
+ {en:'He bought her a ring.',zh:'他買了一枚戒指給她。',type:4,parts:[['He','S'],['bought','V'],['her','IO'],['a ring','DO']]},
+ {en:'The clerk showed us the room.',zh:'店員帶我們看房間。',type:4,parts:[['The clerk','S'],['showed','V'],['us','IO'],['the room','DO']]},
+ {en:'I told him the truth.',zh:'我告訴他實話。',type:4,parts:[['I','S'],['told','V'],['him','IO'],['the truth','DO']]},
+ {en:'She teaches us math.',zh:'她教我們數學。',type:4,parts:[['She','S'],['teaches','V'],['us','IO'],['math','DO']]},
+ {en:'He sent me an email.',zh:'他寄了一封電子郵件給我。',type:4,parts:[['He','S'],['sent','V'],['me','IO'],['an email','DO']]},
+ {en:'Mom made him a costume.',zh:'媽媽做了一套服裝給他。',type:4,parts:[['Mom','S'],['made','V'],['him','IO'],['a costume','DO']]},
+ {en:'They gave the winner a prize.',zh:'他們給了贏家一個獎品。',type:4,parts:[['They','S'],['gave','V'],['the winner','IO'],['a prize','DO']]},
+ {en:'She lent him her umbrella.',zh:'她把傘借給他。',type:4,parts:[['She','S'],['lent','V'],['him','IO'],['her umbrella','DO']]},
+ {en:'The guide showed them the way.',zh:'導遊為他們指路。',type:4,parts:[['The guide','S'],['showed','V'],['them','IO'],['the way','DO']]},
+ {en:'I brought you a present.',zh:'我帶了一個禮物給你。',type:4,parts:[['I','S'],['brought','V'],['you','IO'],['a present','DO']]},
+ {en:'He told us a joke.',zh:'他講了一個笑話給我們聽。',type:4,parts:[['He','S'],['told','V'],['us','IO'],['a joke','DO']]},
+ {en:'She wrote me a postcard.',zh:'她寫了一張明信片給我。',type:4,parts:[['She','S'],['wrote','V'],['me','IO'],['a postcard','DO']]},
+ {en:'Dad gave me some advice.',zh:'爸爸給了我一些建議。',type:4,parts:[['Dad','S'],['gave','V'],['me','IO'],['some advice','DO']]},
+ {en:'The nurse handed her the baby.',zh:'護士把寶寶交給她。',type:4,parts:[['The nurse','S'],['handed','V'],['her','IO'],['the baby','DO']]},
+ {en:'We sent them an invitation.',zh:'我們寄了一張邀請函給他們。',type:4,parts:[['We','S'],['sent','V'],['them','IO'],['an invitation','DO']]},
+ {en:'She cooked me noodles.',zh:'她煮了麵給我。',type:4,parts:[['She','S'],['cooked','V'],['me','IO'],['noodles','DO']]},
+ {en:'He passed me the salt.',zh:'他把鹽遞給我。',type:4,parts:[['He','S'],['passed','V'],['me','IO'],['the salt','DO']]},
+ {en:'My friend lent me his phone.',zh:'我朋友把手機借給我。',type:4,parts:[['My friend','S'],['lent','V'],['me','IO'],['his phone','DO']]}
+],
+5:[
+ {en:'You made me sad.',zh:'你讓我傷心。',type:5,parts:[['You','S'],['made','V'],['me','O'],['sad','C']]},
+ {en:'They call the girl Tina.',zh:'他們叫這女孩 Tina。',type:5,parts:[['They','S'],['call','V'],['the girl','O'],['Tina','C']]},
+ {en:'We elected him captain.',zh:'我們選他當隊長。',type:5,parts:[['We','S'],['elected','V'],['him','O'],['captain','C']]},
+ {en:'The news made her happy.',zh:'這消息讓她開心。',type:5,parts:[['The news','S'],['made','V'],['her','O'],['happy','C']]},
+ {en:'I found the book boring.',zh:'我覺得這本書無聊。',type:5,parts:[['I','S'],['found','V'],['the book','O'],['boring','C']]},
+ {en:'They named the baby Leo.',zh:'他們把寶寶取名 Leo。',type:5,parts:[['They','S'],['named','V'],['the baby','O'],['Leo','C']]},
+ {en:'She keeps the room clean.',zh:'她保持房間乾淨。',type:5,parts:[['She','S'],['keeps','V'],['the room','O'],['clean','C']]},
+ {en:'He calls his dog Lucky.',zh:'他叫他的狗 Lucky。',type:5,parts:[['He','S'],['calls','V'],['his dog','O'],['Lucky','C']]},
+ {en:'The teacher considers him smart.',zh:'老師認為他聰明。',type:5,parts:[['The teacher','S'],['considers','V'],['him','O'],['smart','C']]},
+ {en:'We painted the wall white.',zh:'我們把牆漆成白色。',type:5,parts:[['We','S'],['painted','V'],['the wall','O'],['white','C']]},
+ {en:'The movie made us laugh.',zh:'這部電影讓我們笑了。',type:5,parts:[['The movie','S'],['made','V'],['us','O'],['laugh','C']]},
+ {en:'She left the door open.',zh:'她讓門開著。',type:5,parts:[['She','S'],['left','V'],['the door','O'],['open','C']]},
+ {en:'Coffee keeps me awake.',zh:'咖啡讓我保持清醒。',type:5,parts:[['Coffee','S'],['keeps','V'],['me','O'],['awake','C']]},
+ {en:'They made him the leader.',zh:'他們讓他當領袖。',type:5,parts:[['They','S'],['made','V'],['him','O'],['the leader','C']]},
+ {en:'The rain made the road wet.',zh:'雨把路弄濕了。',type:5,parts:[['The rain','S'],['made','V'],['the road','O'],['wet','C']]},
+ {en:'We call our teacher Mr. Wang.',zh:'我們叫我們的老師王老師。',type:5,parts:[['We','S'],['call','V'],['our teacher','O'],['Mr. Wang','C']]},
+ {en:'His jokes made everyone happy.',zh:'他的笑話讓大家開心。',type:5,parts:[['His jokes','S'],['made','V'],['everyone','O'],['happy','C']]},
+ {en:'She painted her nails pink.',zh:'她把指甲擦成粉紅色。',type:5,parts:[['She','S'],['painted','V'],['her nails','O'],['pink','C']]},
+ {en:'The class chose her leader.',zh:'全班選她當班長。',type:5,parts:[['The class','S'],['chose','V'],['her','O'],['leader','C']]},
+ {en:'The heat turned the milk sour.',zh:'高溫把牛奶弄酸了。',type:5,parts:[['The heat','S'],['turned','V'],['the milk','O'],['sour','C']]},
+ {en:'I consider him a friend.',zh:'我把他當成朋友。',type:5,parts:[['I','S'],['consider','V'],['him','O'],['a friend','C']]},
+ {en:'They kept the fire burning.',zh:'他們讓火持續燃燒。',type:5,parts:[['They','S'],['kept','V'],['the fire','O'],['burning','C']]},
+ {en:'The gift made her smile.',zh:'這禮物讓她笑了。',type:5,parts:[['The gift','S'],['made','V'],['her','O'],['smile','C']]},
+ {en:'We found the game easy.',zh:'我們覺得這遊戲很簡單。',type:5,parts:[['We','S'],['found','V'],['the game','O'],['easy','C']]},
+ {en:'She named her cat Snowy.',zh:'她把貓取名 Snowy。',type:5,parts:[['She','S'],['named','V'],['her cat','O'],['Snowy','C']]},
+ {en:'The coach made us practice.',zh:'教練讓我們練習。',type:5,parts:[['The coach','S'],['made','V'],['us','O'],['practice','C']]},
+ {en:'Loud music drives me crazy.',zh:'大聲的音樂讓我快瘋了。',type:5,parts:[['Loud music','S'],['drives','V'],['me','O'],['crazy','C']]},
+ {en:'The sun kept us warm.',zh:'太陽讓我們暖和。',type:5,parts:[['The sun','S'],['kept','V'],['us','O'],['warm','C']]},
+ {en:'They painted the boat blue.',zh:'他們把船漆成藍色。',type:5,parts:[['They','S'],['painted','V'],['the boat','O'],['blue','C']]},
+ {en:'He left the light on.',zh:'他讓燈開著。',type:5,parts:[['He','S'],['left','V'],['the light','O'],['on','C']]},
+ {en:'We named our team the Tigers.',zh:'我們把隊伍取名為老虎隊。',type:5,parts:[['We','S'],['named','V'],['our team','O'],['the Tigers','C']]},
+ {en:'She found the movie sad.',zh:'她覺得這部電影很悲傷。',type:5,parts:[['She','S'],['found','V'],['the movie','O'],['sad','C']]},
+ {en:'The cold made us shiver.',zh:'寒冷讓我們發抖。',type:5,parts:[['The cold','S'],['made','V'],['us','O'],['shiver','C']]},
+ {en:'His words made me angry.',zh:'他的話讓我生氣。',type:5,parts:[['His words','S'],['made','V'],['me','O'],['angry','C']]},
+ {en:'They elected her president.',zh:'他們選她當總統。',type:5,parts:[['They','S'],['elected','V'],['her','O'],['president','C']]},
+ {en:'The good news made him excited.',zh:'好消息讓他很興奮。',type:5,parts:[['The good news','S'],['made','V'],['him','O'],['excited','C']]},
+ {en:'She keeps her desk tidy.',zh:'她把書桌保持整齊。',type:5,parts:[['She','S'],['keeps','V'],['her desk','O'],['tidy','C']]},
+ {en:'We consider the plan good.',zh:'我們認為這計畫不錯。',type:5,parts:[['We','S'],['consider','V'],['the plan','O'],['good','C']]},
+ {en:'The teacher made the lesson fun.',zh:'老師把課變得有趣。',type:5,parts:[['The teacher','S'],['made','V'],['the lesson','O'],['fun','C']]},
+ {en:'The joke made them laugh.',zh:'這笑話讓他們笑了。',type:5,parts:[['The joke','S'],['made','V'],['them','O'],['laugh','C']]}
+]
+};
+
+/* 第四型「換句話說」 S + V + DO + 介 + IO（正解仍是第四型） */
+const VARIANTS = [
+ {en:'She sent a card to me.',zh:'她寄了一張卡片給我。',type:4,variant:true,parts:[['She','S'],['sent','V'],['a card','DO'],['to','P'],['me','IO']]},
+ {en:'He gave a pencil to me.',zh:'他給我一支筆。',type:4,variant:true,parts:[['He','S'],['gave','V'],['a pencil','DO'],['to','P'],['me','IO']]},
+ {en:'Mom bought a toy for me.',zh:'媽媽買了一個玩具給我。',type:4,variant:true,parts:[['Mom','S'],['bought','V'],['a toy','DO'],['for','P'],['me','IO']]},
+ {en:'Dad made a cake for us.',zh:'爸爸做了一個蛋糕給我們。',type:4,variant:true,parts:[['Dad','S'],['made','V'],['a cake','DO'],['for','P'],['us','IO']]},
+ {en:'I sent flowers to her.',zh:'我送花給她。',type:4,variant:true,parts:[['I','S'],['sent','V'],['flowers','DO'],['to','P'],['her','IO']]},
+ {en:'He wrote a letter to her.',zh:'他寫了一封信給她。',type:4,variant:true,parts:[['He','S'],['wrote','V'],['a letter','DO'],['to','P'],['her','IO']]},
+ {en:'She read a story to the kids.',zh:'她唸了一個故事給孩子們聽。',type:4,variant:true,parts:[['She','S'],['read','V'],['a story','DO'],['to','P'],['the kids','IO']]},
+ {en:'The waiter passed the menu to us.',zh:'服務生把菜單遞給我們。',type:4,variant:true,parts:[['The waiter','S'],['passed','V'],['the menu','DO'],['to','P'],['us','IO']]},
+ {en:'He handed the ticket to me.',zh:'他把票遞給我。',type:4,variant:true,parts:[['He','S'],['handed','V'],['the ticket','DO'],['to','P'],['me','IO']]},
+ {en:'She cooked dinner for us.',zh:'她煮了晚餐給我們。',type:4,variant:true,parts:[['She','S'],['cooked','V'],['dinner','DO'],['for','P'],['us','IO']]},
+ {en:'They gave a prize to the winner.',zh:'他們給了贏家一個獎品。',type:4,variant:true,parts:[['They','S'],['gave','V'],['a prize','DO'],['to','P'],['the winner','IO']]},
+ {en:'He bought a ring for her.',zh:'他買了一枚戒指給她。',type:4,variant:true,parts:[['He','S'],['bought','V'],['a ring','DO'],['for','P'],['her','IO']]}
+];
+
+const ROLE_LEGEND = {S:'主詞',V:'動詞',O:'受詞',C:'補語',IO:'間接受詞',DO:'直接受詞',P:'介系詞',M:'修飾語'};
+
+/* ---------- 工具 ---------- */
+const $ = s => document.querySelector(s);
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+const SAVE_KEY = 'dcl_wudaju_v2';
+function bestScore(){ try{ return JSON.parse(localStorage.getItem(SAVE_KEY))?.best||0; }catch(e){ return 0; } }
+function saveBest(v){ const cur=bestScore(); if(v>cur) localStorage.setItem(SAVE_KEY,JSON.stringify({best:v})); }
+
+const QUESTIONS_PER_ROUND = 20;
+let selected = new Set([1,2,3,4,5]);
+let state = null;
+
+/* ---------- 抽題 ---------- */
+function buildPool(types){
+  let pool = [];
+  types.forEach(t=>{ pool = pool.concat(BANK[t]); });
+  if(types.has(4)) pool = pool.concat(VARIANTS); // 有選第四型時，換句話說變體一起加入
+  return pool;
+}
+function drawRound(){
+  const pool = buildPool(selected);
+  return shuffle(pool).slice(0, Math.min(QUESTIONS_PER_ROUND, pool.length));
+}
+
+/* ---------- 首頁 ---------- */
+function renderHome(){
+  $('#best').textContent = bestScore();
+  const chips = [1,2,3,4,5].map(t=>`
+    <div class="chip ${selected.has(t)?'on':''}" onclick="toggleType(${t})">${TYPE_NAME[t]} ${TYPE_LABEL[t]}</div>`).join('');
+  $('#app').innerHTML = `
+    <div class="card">
+      <div class="intro">
+        <p style="margin-top:0">哈囉！我是<b>大長腿爺爺</b> 👴，今天我們一起來練習<b>英文的五大基本句型</b>！</p>
+        <div class="patterns">
+          句型 1 &nbsp;<b>S + V</b>（主詞＋動詞）<br>
+          句型 2 &nbsp;<b>S + V + O</b>（主詞＋動詞＋受詞）<br>
+          句型 3 &nbsp;<b>S + V + C</b>（主詞＋動詞＋補語）<br>
+          句型 4 &nbsp;<b>S + V + IO + DO</b>（主詞＋動詞＋間接受詞＋直接受詞）<br>
+          句型 5 &nbsp;<b>S + V + O + C</b>（主詞＋動詞＋受詞＋補語）
+        </div>
+        <p style="margin-bottom:6px">每次隨機抽 <b>20 題</b>，看句子判斷它是<b>第幾種句型</b>。答完立刻給你答案跟句子拆解！</p>
+        <p style="margin:6px 0 0;color:var(--muted);font-size:13px">想專練哪幾種句型？點下面的標籤選（預設全選）：</p>
+      </div>
+      <div class="chips">${chips}</div>
+      <div class="row" style="margin-top:8px">
+        <button class="btn btn-main" onclick="startRound()">開始挑戰（隨機 20 題）▶</button>
+      </div>
+    </div>`;
+}
+function toggleType(t){
+  if(selected.has(t)){ if(selected.size>1) selected.delete(t); }
+  else selected.add(t);
+  renderHome();
+}
+function startRound(){
+  state = { qs: drawRound(), idx:0, chosen:[] };
+  state.chosen = new Array(state.qs.length).fill(null);
+  renderQuiz();
+}
+
+/* ---------- 題目畫面 ---------- */
+function tokHTML(parts){
+  return parts.map(p=>`<span class="tok role-${p[1]}"><span class="w">${p[0]}</span><br><span class="r">${p[1]}</span></span>`).join('');
+}
+function legendHTML(parts){
+  const seen=[]; parts.forEach(p=>{ if(!seen.includes(p[1])) seen.push(p[1]); });
+  return seen.map(r=>`<span><b style="color:var(--r-${r})">${r}</b> ${ROLE_LEGEND[r]}</span>`).join('');
+}
+function renderQuiz(){
+  const {qs, idx, chosen} = state;
+  const q = qs[idx];
+  const answered = chosen[idx]!=null;
+
+  const dots = qs.map((qq,i)=>{
+    let cls='dot'; if(i===idx) cls+=' cur';
+    if(chosen[i]!=null){ cls += (chosen[i]===qs[i].type)?' right':' wrong'; }
+    return `<div class="${cls}" onclick="goto(${i})">${i+1}</div>`;
+  }).join('');
+
+  const opts = [1,2,3,4,5].map(t=>{
+    let cls='opt';
+    if(answered){
+      if(t===chosen[idx]) cls += (t===q.type)?' pick-right':' pick-wrong';
+      if(t===q.type && t!==chosen[idx]) cls += ' reveal';
+    }
+    return `<button class="${cls}" ${answered?'disabled':''} onclick="answer(${t})"><span class="name">${TYPE_NAME[t]}</span>${TYPE_LABEL[t]}</button>`;
+  }).join('');
+
+  let fb='';
+  if(answered){
+    const correct = chosen[idx]===q.type;
+    let note = TYPE_NOTE[q.type];
+    if(q.variant) note += '（這是它的另一種寫法 S + V + DO + 介系詞 + IO，判斷起來仍然屬於第四型。）';
+    fb = `<div class="fb ${correct?'ok':'no'}">
+      <div class="head">${correct?'答對了！🎉':'再想一下 ~ 正確答案是「'+TYPE_NAME[q.type]+'　'+TYPE_LABEL[q.type]+'」'}</div>
+      <div class="analysis">${tokHTML(q.parts)}</div>
+      <div class="legend">${legendHTML(q.parts)}</div>
+      <div class="note" style="margin-top:8px">${note}</div>
+    </div>`;
+  }
+
+  const answeredCount = chosen.filter(c=>c!=null).length;
+  const isLast = idx===qs.length-1;
+  const allDone = answeredCount===qs.length;
+  const nav = `<div class="nav">
+      <button class="btn btn-ghost" onclick="${idx>0?`goto(${idx-1})`:'backHome()'}">${idx>0?'◀ 上一題':'✕ 離開'}</button>
+      ${ isLast
+          ? (allDone ? `<button class="btn btn-main" onclick="finish()">看成績 🏆</button>`
+                     : `<button class="btn btn-ghost" onclick="jumpNext()">跳到未作答題 ▶</button>`)
+          : `<button class="btn btn-main" onclick="goto(${idx+1})">下一題 ▶</button>` }
+    </div>`;
+
+  $('#app').innerHTML = `
+    <div class="card">
+      <div class="topbar">
+        <div style="font-weight:800;color:var(--heading)">五大句型 · 隨機 20 題</div>
+        <div style="color:var(--muted);font-size:13px">第 ${idx+1} / ${qs.length} 題 · 已答 ${answeredCount}</div>
+      </div>
+      <div class="refstrip">句型1 S+V｜句型2 S+V+O｜句型3 S+V+C｜句型4 S+V+IO+DO｜句型5 S+V+O+C</div>
+      <div class="progress">${dots}</div>
+      <div class="qbox">
+        <div class="qlabel">下面這個句子屬於哪一種句型？</div>
+        <div class="sentence">${q.en}</div>
+        <div class="zh">${q.zh}</div>
+        <div class="opts">${opts}</div>
+        ${fb}
+      </div>
+      ${nav}
+    </div>`;
+}
+
+function answer(t){
+  if(state.chosen[state.idx]!=null) return; // 已答過，不重複計分
+  state.chosen[state.idx] = t;
+  renderQuiz();
+}
+function goto(i){ if(i>=0 && i<state.qs.length){ state.idx=i; renderQuiz(); } }
+function jumpNext(){
+  const i = state.chosen.findIndex(c=>c==null);
+  if(i>=0){ state.idx=i; renderQuiz(); }
+}
+function backHome(){ if(confirm('確定要離開這一輪嗎？進度不會保留。')){ state=null; renderHome(); } }
+
+function finish(){
+  const {qs, chosen} = state;
+  const score = qs.reduce((a,q,i)=> a + (chosen[i]===q.type?1:0), 0);
+  const total = qs.length;
+  const pct = score/total;
+  const stars = pct>=0.9?3 : pct>=0.75?2 : pct>=0.6?1 : 0;
+  saveBest(score);
+  const emoji = stars>=3?'🏆':stars>=1?'😊':'💪';
+  const encourage = pct>=0.9?'太厲害了！五大句型你完全掌握了 👏'
+                  : pct>=0.75?'很棒！再多練幾輪就爐火純青了。'
+                  : pct>=0.6?'不錯喔，答錯的題目可以回去看看拆解。'
+                  : '沒關係，多練幾次就會了，大長腿爺爺陪你 💪';
+  // 各句型答對統計
+  const byType={1:[0,0],2:[0,0],3:[0,0],4:[0,0],5:[0,0]};
+  qs.forEach((q,i)=>{ byType[q.type][1]++; if(chosen[i]===q.type) byType[q.type][0]++; });
+  const breakdown = [1,2,3,4,5].filter(t=>byType[t][1]>0)
+    .map(t=>`<span style="display:inline-block;margin:2px 8px">${TYPE_NAME[t]}：${byType[t][0]}/${byType[t][1]}</span>`).join('');
+
+  $('#app').innerHTML = `
+    <div class="card result">
+      <div class="big">${emoji}</div>
+      <div class="score">五大句型 · 隨機 20 題</div>
+      <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+      <div style="font-size:24px;font-weight:800">答對 ${score} / ${total} 題</div>
+      <div class="mini" style="margin:10px 0">${breakdown}</div>
+      <p style="color:var(--muted)">${encourage}</p>
+      <div class="row" style="justify-content:center;margin-top:8px">
+        <button class="btn btn-main" onclick="startRound()">再來一輪 ↻</button>
+        <button class="btn btn-ghost" onclick="backToHomeAfter()">回到首頁</button>
+      </div>
+    </div>`;
+  $('#best').textContent = bestScore();
+}
+function backToHomeAfter(){ state=null; renderHome(); }
+
+renderHome();
+</script>
+</body>
+</html>
