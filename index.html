@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>大長腿來闖關｜五大句型篇</title>
+<title>大長腿來闖關｜五大句型（練習＋進階考試）</title>
 <style>
   :root{
     --bg1:#fff8f4; --bg2:#ffe8f0; --card:#ffffff; --panel:#fff5f9;
     --text:#3f2233; --muted:#9a6b81; --accent:#e84c8a; --accent2:#ffb3d1;
     --heading:#c62f76; --good:#12a150; --bad:#e5484d; --line:#f3cad9;
-    --mint:#e6f7ef; --redbg:#fdecec; --gold:#e6a817;
+    --mint:#e6f7ef; --redbg:#fdecec; --gold:#e6a817; --exam:#7c3aed;
     --r-S:#2f6fed; --r-V:#e5484d; --r-O:#12a150; --r-C:#d9820a;
     --r-IO:#8b5cf6; --r-DO:#0e9488; --r-P:#94748a; --r-M:#8a8f98;
   }
@@ -26,18 +26,28 @@
   .intro{line-height:1.9;font-size:15px}
   .intro b{color:var(--heading)}
   .patterns{font-family:ui-monospace,Menlo,Consolas,monospace;line-height:2.1;background:var(--panel);border-radius:12px;padding:10px 14px;font-size:14px}
+  .flow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .flowbox{flex:1;min-width:220px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--panel)}
+  .flowbox .n{font-weight:800;color:var(--heading)}
+  .flowbox.ex{border-color:#ddd6fe;background:#f5f3ff}
+  .flowbox.ex .n{color:var(--exam)}
   .btn{border:none;border-radius:14px;padding:12px 20px;font-size:15px;font-weight:800;cursor:pointer;transition:.15s}
   .btn-main{background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(232,76,138,.35)}
   .btn-main:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .btn-exam{background:var(--exam);color:#fff;box-shadow:0 8px 18px rgba(124,58,237,.3)}
   .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--heading)}
   .btn-ghost:hover{border-color:var(--accent2)}
   .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;color:var(--muted);transition:.12s;font-family:ui-monospace,Menlo,Consolas,monospace}
-  .chip.on{background:var(--panel);border-color:var(--accent);color:var(--heading)}
-  .legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);justify-content:center;margin-top:8px}
-  .legend span b{font-size:12px}
-  .topbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .phasebar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .badge{font-size:13px;font-weight:800;padding:5px 12px;border-radius:999px}
+  .badge.practice{background:var(--panel);color:var(--heading);border:1px solid var(--accent2)}
+  .badge.exam{background:#f5f3ff;color:var(--exam);border:1px solid #ddd6fe}
+  .teach{background:var(--panel);border:1px dashed var(--accent2);border-radius:16px;padding:14px 16px;margin:12px 0}
+  .teach .t-title{color:var(--heading);font-weight:800;font-size:16px;margin-bottom:4px}
+  .teach .t-struct{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:20px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+  .teach .eg{font-size:14px;line-height:1.9}
+  .teach .eg .en{font-weight:700}
+  .teach .tip{color:var(--muted);font-size:13px;margin-top:6px;line-height:1.7}
   .refstrip{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:10px 0 4px;line-height:1.8}
   .progress{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 14px}
   .dot{width:22px;height:22px;border-radius:50%;background:#fbe0eb;color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:1px solid var(--line);cursor:pointer}
@@ -74,13 +84,15 @@
   .role-DO .w{color:var(--r-DO)} .role-DO .r{background:var(--r-DO)}
   .role-P .w{color:var(--r-P)} .role-P .r{background:var(--r-P)}
   .role-M .w{color:var(--r-M)} .role-M .r{background:var(--r-M)}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--muted);justify-content:center}
   .nav{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
   .result{text-align:center;padding:12px}
   .result .big{font-size:56px;margin:6px 0}
   .result .score{font-size:22px;font-weight:800;color:var(--heading)}
   .result .stars{font-size:40px;letter-spacing:4px;margin:8px 0}
-  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
   .mini{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+  .foot{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
+  .center{text-align:center}
 </style>
 </head>
 <body>
@@ -90,13 +102,13 @@
       <div class="face">👴</div>
       <div>
         <h1>大長腿來闖關</h1>
-        <div class="sub">英文五大句型篇 · 隨機 20 題挑戰</div>
+        <div class="sub">英文五大句型 · 練習 10 題 ＋ 進階考試 10 題</div>
       </div>
     </div>
-    <div class="pill">最佳 <span id="best">0</span> / 20</div>
+    <div class="pill">考試最佳 <span id="best">0</span> / 10</div>
   </header>
   <div id="app"></div>
-  <div class="foot">題庫共 200＋ 題，每次隨機抽 20 題、五大句型混合出題。答對綠色、答錯紅色會顯示正解與句子拆解。最佳成績存在這台裝置。</div>
+  <div class="foot">題庫共 200＋ 題。先照句型順序帶著教學練習，再進階混合考試。答對綠色、答錯紅色會顯示正解與句子拆解。考試最佳成績存在這台裝置。</div>
 </div>
 
 <script>
@@ -108,6 +120,13 @@ const TYPE_NOTE  = {
   3:'第三型 S + V + C：be 動詞或連綴動詞後面接補語，補充說明「主詞」。',
   4:'第四型 S + V + IO + DO：授與動詞後面接兩個受詞——間接受詞（對象）＋直接受詞（東西）。',
   5:'第五型 S + V + O + C：受詞後面再接補語，補充說明「受詞」。'
+};
+const CARD = {
+  1:{eg:[['She laughs.','她笑了。'],['Birds fly.','鳥會飛。']], tip:'第一型最簡單，只有主詞跟動詞。動詞後面不需要受詞或補語。'},
+  2:{eg:[['I love you.','我愛你。'],['I read a book.','我讀了一本書。']], tip:'及物動詞單獨存在時無法表達完整意思，需要一個受詞來接受動作。'},
+  3:{eg:[['He is cute.','他很可愛。'],['She is a student.','她是學生。']], tip:'只有主詞跟動詞時無法完整表達，需要補語來補充說明「主詞」。'},
+  4:{eg:[['He gave me a pencil.','他給我一支筆。'],['She told me a story.','她講了一個故事給我聽。']], tip:'授與動詞後面要接兩個受詞：間接受詞（對象）＋直接受詞（東西）。'},
+  5:{eg:[['You made me sad.','你讓我傷心。'],['They call the girl Tina.','他們叫這女孩 Tina。']], tip:'只有主詞、動詞跟受詞還不完整，需要補語來補充說明「受詞」。'}
 };
 
 /* 角色: S V O C IO DO P(介系詞) M(修飾語/副詞) */
@@ -324,7 +343,6 @@ const BANK = {
 ]
 };
 
-/* 第四型「換句話說」 S + V + DO + 介 + IO（正解仍是第四型） */
 const VARIANTS = [
  {en:'She sent a card to me.',zh:'她寄了一張卡片給我。',type:4,variant:true,parts:[['She','S'],['sent','V'],['a card','DO'],['to','P'],['me','IO']]},
  {en:'He gave a pencil to me.',zh:'他給我一支筆。',type:4,variant:true,parts:[['He','S'],['gave','V'],['a pencil','DO'],['to','P'],['me','IO']]},
@@ -345,36 +363,53 @@ const ROLE_LEGEND = {S:'主詞',V:'動詞',O:'受詞',C:'補語',IO:'間接受�
 /* ---------- 工具 ---------- */
 const $ = s => document.querySelector(s);
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function cumOpts(t){ return t<=2 ? [1,2] : [1,2,3,4,5].slice(0,t); }
 
-const SAVE_KEY = 'dcl_wudaju_v2';
+const SAVE_KEY = 'dcl_wudaju_v3';
 function bestScore(){ try{ return JSON.parse(localStorage.getItem(SAVE_KEY))?.best||0; }catch(e){ return 0; } }
 function saveBest(v){ const cur=bestScore(); if(v>cur) localStorage.setItem(SAVE_KEY,JSON.stringify({best:v})); }
 
-const QUESTIONS_PER_ROUND = 20;
-let selected = new Set([1,2,3,4,5]);
-let state = null;
+const PRACTICE_PER_TYPE = 2;   // 5 型 × 2 = 練習 10 題
+const EXAM_PER_TYPE = 2;       // 5 型 × 2 = 考試 10 題
+let session = null;
 
-/* ---------- 抽題 ---------- */
-function buildPool(types){
-  let pool = [];
-  types.forEach(t=>{ pool = pool.concat(BANK[t]); });
-  if(types.has(4)) pool = pool.concat(VARIANTS); // 有選第四型時，換句話說變體一起加入
-  return pool;
-}
-function drawRound(){
-  const pool = buildPool(selected);
-  return shuffle(pool).slice(0, Math.min(QUESTIONS_PER_ROUND, pool.length));
+/* ---------- 抽題：一輪 = 練習10 + 考試10，全程不重複 ---------- */
+function drawSession(){
+  const used = new Set();
+  const pickFrom = (t,n)=>{ const p=shuffle(BANK[t]).filter(x=>!used.has(x.en)).slice(0,n); p.forEach(x=>used.add(x.en)); return p; };
+
+  // 練習：依句型順序，每型 2 題，第一題帶教學卡，選項採累進
+  const practice=[];
+  for(const t of [1,2,3,4,5]){
+    const qs = pickFrom(t, PRACTICE_PER_TYPE);
+    qs.forEach((q,k)=> practice.push({q, opts:cumOpts(t), card:(k===0? t : 0)}));
+  }
+
+  // 考試：五型混合，每型 2 題，選項固定五選一，並隨機換入「換句話說」變體
+  let exam=[];
+  for(const t of [1,2,3,4,5]) exam = exam.concat(pickFrom(t, EXAM_PER_TYPE));
+  const varPool = shuffle(VARIANTS).filter(x=>!used.has(x.en));
+  let swaps=0;
+  for(let i=0;i<exam.length && swaps<2;i++){
+    if(exam[i].type===4 && varPool[swaps]){ used.add(varPool[swaps].en); exam[i]=varPool[swaps]; swaps++; }
+  }
+  exam = shuffle(exam).map(q=>({q, opts:[1,2,3,4,5], card:0}));
+
+  return {
+    phase:'practice', idx:0,
+    practice, exam,
+    ansP:new Array(practice.length).fill(null),
+    ansE:new Array(exam.length).fill(null)
+  };
 }
 
 /* ---------- 首頁 ---------- */
 function renderHome(){
   $('#best').textContent = bestScore();
-  const chips = [1,2,3,4,5].map(t=>`
-    <div class="chip ${selected.has(t)?'on':''}" onclick="toggleType(${t})">${TYPE_NAME[t]} ${TYPE_LABEL[t]}</div>`).join('');
   $('#app').innerHTML = `
     <div class="card">
       <div class="intro">
-        <p style="margin-top:0">哈囉！我是<b>大長腿爺爺</b> 👴，今天我們一起來練習<b>英文的五大基本句型</b>！</p>
+        <p style="margin-top:0">哈囉！我是<b>大長腿爺爺</b> 👴，今天我們用「先學再考」的方式練習<b>英文五大句型</b>！</p>
         <div class="patterns">
           句型 1 &nbsp;<b>S + V</b>（主詞＋動詞）<br>
           句型 2 &nbsp;<b>S + V + O</b>（主詞＋動詞＋受詞）<br>
@@ -382,57 +417,62 @@ function renderHome(){
           句型 4 &nbsp;<b>S + V + IO + DO</b>（主詞＋動詞＋間接受詞＋直接受詞）<br>
           句型 5 &nbsp;<b>S + V + O + C</b>（主詞＋動詞＋受詞＋補語）
         </div>
-        <p style="margin-bottom:6px">每次隨機抽 <b>20 題</b>，看句子判斷它是<b>第幾種句型</b>。答完立刻給你答案跟句子拆解！</p>
-        <p style="margin:6px 0 0;color:var(--muted);font-size:13px">想專練哪幾種句型？點下面的標籤選（預設全選）：</p>
+        <div class="flow">
+          <div class="flowbox"><div class="n">① 練習 10 題</div>照句型 1 到 5 的順序，每一型先看爺爺的教學卡，再做 2 題。答完會把句子拆給你看。</div>
+          <div class="flowbox ex"><div class="n">② 進階考試 10 題</div>五大句型混合、五選一，還會出現句型 4 的「換句話說」寫法。這一段才計分、給星星。</div>
+        </div>
+        <p style="margin:6px 0 0;color:var(--muted);font-size:13px">題庫共 200＋ 題，每次隨機出題。</p>
       </div>
-      <div class="chips">${chips}</div>
-      <div class="row" style="margin-top:8px">
-        <button class="btn btn-main" onclick="startRound()">開始挑戰（隨機 20 題）▶</button>
+      <div class="row" style="margin-top:12px">
+        <button class="btn btn-main" onclick="startSession()">開始練習 ▶</button>
       </div>
     </div>`;
 }
-function toggleType(t){
-  if(selected.has(t)){ if(selected.size>1) selected.delete(t); }
-  else selected.add(t);
-  renderHome();
-}
-function startRound(){
-  state = { qs: drawRound(), idx:0, chosen:[] };
-  state.chosen = new Array(state.qs.length).fill(null);
-  renderQuiz();
-}
+function startSession(){ session = drawSession(); renderQuiz(); }
 
 /* ---------- 題目畫面 ---------- */
-function tokHTML(parts){
-  return parts.map(p=>`<span class="tok role-${p[1]}"><span class="w">${p[0]}</span><br><span class="r">${p[1]}</span></span>`).join('');
-}
-function legendHTML(parts){
-  const seen=[]; parts.forEach(p=>{ if(!seen.includes(p[1])) seen.push(p[1]); });
-  return seen.map(r=>`<span><b style="color:var(--r-${r})">${r}</b> ${ROLE_LEGEND[r]}</span>`).join('');
-}
-function renderQuiz(){
-  const {qs, idx, chosen} = state;
-  const q = qs[idx];
-  const answered = chosen[idx]!=null;
+function tokHTML(parts){ return parts.map(p=>`<span class="tok role-${p[1]}"><span class="w">${p[0]}</span><br><span class="r">${p[1]}</span></span>`).join(''); }
+function legendHTML(parts){ const seen=[]; parts.forEach(p=>{ if(!seen.includes(p[1])) seen.push(p[1]); }); return seen.map(r=>`<span><b style="color:var(--r-${r})">${r}</b> ${ROLE_LEGEND[r]}</span>`).join(''); }
 
-  const dots = qs.map((qq,i)=>{
+function curList(){ return session.phase==='practice'? session.practice : session.exam; }
+function curAns(){ return session.phase==='practice'? session.ansP : session.ansE; }
+
+function renderQuiz(){
+  const isP = session.phase==='practice';
+  const list = curList(); const ans = curAns();
+  const idx = session.idx; const item = list[idx]; const q = item.q;
+  const answered = ans[idx]!=null;
+
+  const dots = list.map((it,i)=>{
     let cls='dot'; if(i===idx) cls+=' cur';
-    if(chosen[i]!=null){ cls += (chosen[i]===qs[i].type)?' right':' wrong'; }
+    if(ans[i]!=null){ cls += (ans[i]===list[i].q.type)?' right':' wrong'; }
     return `<div class="${cls}" onclick="goto(${i})">${i+1}</div>`;
   }).join('');
 
-  const opts = [1,2,3,4,5].map(t=>{
+  let card='';
+  if(isP && item.card){
+    const c = CARD[item.card];
+    const egs = c.eg.map(e=>`<div><span class="en">${e[0]}</span> <span style="color:var(--muted)">${e[1]}</span></div>`).join('');
+    card = `<div class="teach">
+        <div class="t-title">${TYPE_NAME[item.card]}｜${TYPE_LABEL[item.card]}</div>
+        <div class="t-struct">${TYPE_LABEL[item.card]}</div>
+        <div class="eg">${egs}</div>
+        <div class="tip">💡 ${c.tip}</div>
+      </div>`;
+  }
+
+  const opts = item.opts.map(t=>{
     let cls='opt';
     if(answered){
-      if(t===chosen[idx]) cls += (t===q.type)?' pick-right':' pick-wrong';
-      if(t===q.type && t!==chosen[idx]) cls += ' reveal';
+      if(t===ans[idx]) cls += (t===q.type)?' pick-right':' pick-wrong';
+      if(t===q.type && t!==ans[idx]) cls += ' reveal';
     }
     return `<button class="${cls}" ${answered?'disabled':''} onclick="answer(${t})"><span class="name">${TYPE_NAME[t]}</span>${TYPE_LABEL[t]}</button>`;
   }).join('');
 
   let fb='';
   if(answered){
-    const correct = chosen[idx]===q.type;
+    const correct = ans[idx]===q.type;
     let note = TYPE_NOTE[q.type];
     if(q.variant) note += '（這是它的另一種寫法 S + V + DO + 介系詞 + IO，判斷起來仍然屬於第四型。）';
     fb = `<div class="fb ${correct?'ok':'no'}">
@@ -443,82 +483,100 @@ function renderQuiz(){
     </div>`;
   }
 
-  const answeredCount = chosen.filter(c=>c!=null).length;
-  const isLast = idx===qs.length-1;
-  const allDone = answeredCount===qs.length;
-  const nav = `<div class="nav">
-      <button class="btn btn-ghost" onclick="${idx>0?`goto(${idx-1})`:'backHome()'}">${idx>0?'◀ 上一題':'✕ 離開'}</button>
-      ${ isLast
-          ? (allDone ? `<button class="btn btn-main" onclick="finish()">看成績 🏆</button>`
-                     : `<button class="btn btn-ghost" onclick="jumpNext()">跳到未作答題 ▶</button>`)
-          : `<button class="btn btn-main" onclick="goto(${idx+1})">下一題 ▶</button>` }
-    </div>`;
+  const answeredCount = ans.filter(c=>c!=null).length;
+  const isLast = idx===list.length-1;
+  const allDone = answeredCount===list.length;
+
+  let rightBtn='';
+  if(isLast){
+    if(!allDone){ rightBtn = `<button class="btn btn-ghost" onclick="jumpNext()">跳到未作答題 ▶</button>`; }
+    else if(isP){ rightBtn = `<button class="btn btn-exam" onclick="toExam()">練習完成，開始考試 ▶</button>`; }
+    else { rightBtn = `<button class="btn btn-exam" onclick="finish()">看成績 🏆</button>`; }
+  } else {
+    rightBtn = `<button class="btn ${isP?'btn-main':'btn-exam'}" onclick="goto(${idx+1})">下一題 ▶</button>`;
+  }
+  const leftBtn = idx>0 ? `<button class="btn btn-ghost" onclick="goto(${idx-1})">◀ 上一題</button>`
+                        : `<button class="btn btn-ghost" onclick="quit()">✕ 離開</button>`;
 
   $('#app').innerHTML = `
     <div class="card">
-      <div class="topbar">
-        <div style="font-weight:800;color:var(--heading)">五大句型 · 隨機 20 題</div>
-        <div style="color:var(--muted);font-size:13px">第 ${idx+1} / ${qs.length} 題 · 已答 ${answeredCount}</div>
+      <div class="phasebar">
+        <span class="badge ${isP?'practice':'exam'}">${isP?'① 練習階段':'② 進階考試'}</span>
+        <div style="color:var(--muted);font-size:13px">第 ${idx+1} / ${list.length} 題 · 已答 ${answeredCount}</div>
       </div>
-      <div class="refstrip">句型1 S+V｜句型2 S+V+O｜句型3 S+V+C｜句型4 S+V+IO+DO｜句型5 S+V+O+C</div>
+      ${ isP ? '' : '<div class="refstrip">句型1 S+V｜句型2 S+V+O｜句型3 S+V+C｜句型4 S+V+IO+DO｜句型5 S+V+O+C</div>' }
+      ${card}
       <div class="progress">${dots}</div>
       <div class="qbox">
-        <div class="qlabel">下面這個句子屬於哪一種句型？</div>
+        <div class="qlabel">${isP?'看句子，選出正確的句型：':'這個句子屬於哪一種句型？'}</div>
         <div class="sentence">${q.en}</div>
         <div class="zh">${q.zh}</div>
         <div class="opts">${opts}</div>
         ${fb}
       </div>
-      ${nav}
+      <div class="nav">${leftBtn}${rightBtn}</div>
     </div>`;
 }
 
 function answer(t){
-  if(state.chosen[state.idx]!=null) return; // 已答過，不重複計分
-  state.chosen[state.idx] = t;
+  const ans = curAns();
+  if(ans[session.idx]!=null) return; // 已答過，不重複計分
+  ans[session.idx] = t;
   renderQuiz();
 }
-function goto(i){ if(i>=0 && i<state.qs.length){ state.idx=i; renderQuiz(); } }
-function jumpNext(){
-  const i = state.chosen.findIndex(c=>c==null);
-  if(i>=0){ state.idx=i; renderQuiz(); }
+function goto(i){ const list=curList(); if(i>=0 && i<list.length){ session.idx=i; renderQuiz(); } }
+function jumpNext(){ const ans=curAns(); const i=ans.findIndex(c=>c==null); if(i>=0){ session.idx=i; renderQuiz(); } }
+function toExam(){ session.phase='exam'; session.idx=0; renderTransition(); }
+function quit(){ if(confirm('確定要離開嗎？這一輪的進度不會保留。')){ session=null; renderHome(); } }
+
+function renderTransition(){
+  const pRight = session.ansP.reduce((a,c,i)=> a + (c===session.practice[i].q.type?1:0), 0);
+  $('#app').innerHTML = `
+    <div class="card result">
+      <div class="big">📖 ➜ ✏️</div>
+      <div class="score">練習完成！</div>
+      <p style="color:var(--muted)">練習答對 ${pRight} / ${session.practice.length} 題（練習不計分）</p>
+      <p style="line-height:1.8">接下來是 <b style="color:var(--exam)">進階考試 10 題</b>：五大句型混合、五選一，還會出現句型 4 的「換句話說」寫法。準備好了嗎？</p>
+      <div class="row" style="justify-content:center;margin-top:8px">
+        <button class="btn btn-exam" onclick="renderQuiz()">開始進階考試 ▶</button>
+      </div>
+    </div>`;
 }
-function backHome(){ if(confirm('確定要離開這一輪嗎？進度不會保留。')){ state=null; renderHome(); } }
 
 function finish(){
-  const {qs, chosen} = state;
-  const score = qs.reduce((a,q,i)=> a + (chosen[i]===q.type?1:0), 0);
-  const total = qs.length;
-  const pct = score/total;
-  const stars = pct>=0.9?3 : pct>=0.75?2 : pct>=0.6?1 : 0;
+  const {exam, ansE} = session;
+  const score = exam.reduce((a,it,i)=> a + (ansE[i]===it.q.type?1:0), 0);
+  const total = exam.length; const pct=score/total;
+  const stars = pct>=0.9?3 : pct>=0.7?2 : pct>=0.6?1 : 0;
   saveBest(score);
   const emoji = stars>=3?'🏆':stars>=1?'😊':'💪';
   const encourage = pct>=0.9?'太厲害了！五大句型你完全掌握了 👏'
-                  : pct>=0.75?'很棒！再多練幾輪就爐火純青了。'
-                  : pct>=0.6?'不錯喔，答錯的題目可以回去看看拆解。'
-                  : '沒關係，多練幾次就會了，大長腿爺爺陪你 💪';
-  // 各句型答對統計
+                  : pct>=0.7?'很棒！再多考幾輪就爐火純青了。'
+                  : pct>=0.6?'不錯喔，答錯的題目可以回去看拆解。'
+                  : '沒關係，多練幾次一定會進步，大長腿爺爺陪你 💪';
   const byType={1:[0,0],2:[0,0],3:[0,0],4:[0,0],5:[0,0]};
-  qs.forEach((q,i)=>{ byType[q.type][1]++; if(chosen[i]===q.type) byType[q.type][0]++; });
+  exam.forEach((it,i)=>{ byType[it.q.type][1]++; if(ansE[i]===it.q.type) byType[it.q.type][0]++; });
   const breakdown = [1,2,3,4,5].filter(t=>byType[t][1]>0)
     .map(t=>`<span style="display:inline-block;margin:2px 8px">${TYPE_NAME[t]}：${byType[t][0]}/${byType[t][1]}</span>`).join('');
+  const pRight = session.ansP.reduce((a,c,i)=> a + (c===session.practice[i].q.type?1:0), 0);
 
   $('#app').innerHTML = `
     <div class="card result">
       <div class="big">${emoji}</div>
-      <div class="score">五大句型 · 隨機 20 題</div>
+      <div class="score">進階考試成績</div>
       <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
       <div style="font-size:24px;font-weight:800">答對 ${score} / ${total} 題</div>
       <div class="mini" style="margin:10px 0">${breakdown}</div>
+      <p style="color:var(--muted);font-size:13px">（練習階段答對 ${pRight} / ${session.practice.length} 題）</p>
       <p style="color:var(--muted)">${encourage}</p>
       <div class="row" style="justify-content:center;margin-top:8px">
-        <button class="btn btn-main" onclick="startRound()">再來一輪 ↻</button>
-        <button class="btn btn-ghost" onclick="backToHomeAfter()">回到首頁</button>
+        <button class="btn btn-main" onclick="startSession()">再來一輪 ↻</button>
+        <button class="btn btn-ghost" onclick="backHome()">回到首頁</button>
       </div>
     </div>`;
   $('#best').textContent = bestScore();
 }
-function backToHomeAfter(){ state=null; renderHome(); }
+function backHome(){ session=null; renderHome(); }
 
 renderHome();
 </script>
