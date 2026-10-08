@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>公民第二章｜人性尊嚴與人權保障</title>
+<style>
+:root{
+  --bg:#f5f8fc;--card:#fff;--ink:#172033;--muted:#667085;--line:#dfe6ef;
+  --blue:#2563eb;--blue2:#eaf2ff;--green:#16865c;--green2:#eaf8f2;
+  --red:#c93d4b;--red2:#fff0f1;--orange:#b76808;--orange2:#fff5e7;
+  --shadow:0 10px 30px rgba(30,55,90,.09);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;background:linear-gradient(180deg,#eef5ff 0,#f8fafc 260px);color:var(--ink)}
+button{font:inherit}
+.wrap{max-width:900px;margin:auto;padding:18px 14px 42px}
+.hero{background:linear-gradient(135deg,#2458c5,#3987df);color:#fff;border-radius:24px;padding:24px 22px;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(26px,5vw,40px);margin:0 0 8px}
+.hero p{margin:0;opacity:.92;line-height:1.7}
+.tabs{display:flex;gap:8px;margin:14px 0;position:sticky;top:0;z-index:5;padding:8px 0;background:rgba(245,248,252,.92);backdrop-filter:blur(8px)}
+.tab{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;font-weight:800;color:#465268;cursor:pointer}
+.tab.active{background:#172b4d;color:#fff;border-color:#172b4d}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:14px;box-shadow:var(--shadow)}
+.hidden{display:none!important}
+.rules-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rule{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fbfdff}
+.rule h3{margin:0 0 7px;font-size:18px}
+.rule p,.rule li{color:#4b5870;line-height:1.65}
+.rule ul{margin:6px 0 0;padding-left:20px}
+.k{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--blue2);color:#1e57b7;font-size:13px;font-weight:800}
+.startbox{text-align:center;padding:10px 0}
+.primary,.secondary{border:0;border-radius:14px;padding:13px 18px;font-weight:900;cursor:pointer}
+.primary{background:var(--blue);color:#fff}
+.secondary{background:#edf1f7;color:#28354a}
+.primary:active,.secondary:active,.choice:active{transform:scale(.99)}
+.meta{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-weight:700}
+.progress{height:9px;background:#e8edf4;border-radius:999px;overflow:hidden;margin:12px 0 18px}
+.progress>div{height:100%;background:linear-gradient(90deg,#3b82f6,#22a06b);width:0;transition:.25s}
+.qtitle{font-size:clamp(20px,4.2vw,27px);line-height:1.55;margin:8px 0 16px}
+.choices{display:grid;gap:10px}
+.choice{width:100%;text-align:left;border:1.5px solid #d7dfeb;background:#fff;border-radius:15px;padding:14px 15px;color:#24324a;cursor:pointer;line-height:1.45}
+.choice:hover{border-color:#91b7f5;background:#f8fbff}
+.choice.correct{border-color:#54b98c;background:var(--green2);color:#0c6a48;font-weight:800}
+.choice.wrong{border-color:#e18a94;background:var(--red2);color:#a82736;font-weight:800}
+.choice:disabled{cursor:default}
+.feedback{margin-top:14px;border-radius:15px;padding:14px 15px;line-height:1.65}
+.feedback.ok{background:var(--green2);color:#0d6948}
+.feedback.no{background:var(--red2);color:#922b37}
+.feedback b{display:block;margin-bottom:3px}
+.actions{display:flex;justify-content:flex-end;margin-top:14px}
+.score{text-align:center}
+.score .big{font-size:58px;font-weight:950;color:var(--blue);line-height:1}
+.score h2{margin:8px 0}
+.review{display:grid;gap:10px;margin-top:16px}
+.review-item{border:1px solid var(--line);border-radius:15px;padding:13px;background:#fbfcfe;line-height:1.55}
+.review-item strong{color:#a12835}
+.legend{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.pill{font-size:12px;font-weight:800;background:#eef2f7;color:#516078;padding:5px 9px;border-radius:999px}
+.note{background:var(--orange2);border-left:4px solid #e5a33f;padding:12px 14px;border-radius:10px;line-height:1.6;color:#70420b}
+@media(max-width:650px){.rules-grid{grid-template-columns:1fr}.hero{border-radius:19px;padding:20px 17px}.card{padding:16px}.tabs{overflow:auto}.tab{white-space:nowrap}.wrap{padding-left:10px;padding-right:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="k" style="background:rgba(255,255,255,.18);color:white">公民｜第二章</div>
+    <h1>人性尊嚴與人權保障</h1>
+    <p>不是只背名詞：要能從生活情境判斷「這是哪一種概念、哪一部法律、哪一個處理流程」。</p>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-page="home">開始挑戰</button>
+    <button class="tab" data-page="rules">重點整理</button>
+  </nav>
+
+  <main id="home">
+    <section id="intro" class="card">
+      <div class="startbox">
+        <h2>🎯 每回合 15 題</h2>
+        <p style="color:var(--muted);line-height:1.7">題目會重新抽選、選項也會洗牌。包含名詞判斷、生活情境、法律適用與校園事件處理流程。</p>
+        <div class="legend">
+          <span class="pill">人性尊嚴／人權</span><span class="pill">世界人權宣言</span>
+          <span class="pill">性別概念</span><span class="pill">性平三法</span>
+          <span class="pill">性騷擾／性侵害</span><span class="pill">情境應用</span>
+        </div>
+        <button class="primary" onclick="startGame()">開始 15 題挑戰</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="card hidden">
+      <div class="meta"><span id="qno">第 1 / 15 題</span><span id="scoreNow">目前 0 分</span></div>
+      <div class="progress"><div id="bar"></div></div>
+      <div id="category" class="k">觀念題</div>
+      <div id="question" class="qtitle"></div>
+      <div id="choices" class="choices"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="actions"><button id="nextBtn" class="primary hidden" onclick="nextQuestion()">下一題</button></div>
+    </section>
+
+    <section id="result" class="card hidden"></section>
+  </main>
+
+  <main id="rules" class="hidden">
+    <section class="card">
+      <h2>📘 第二章重點整理</h2>
+      <div class="rules-grid">
+        <div class="rule">
+          <h3>1. 人性尊嚴 vs. 人權</h3>
+          <p><b>人性尊嚴</b>：每個人都是應受尊重的個體，具有價值與獨特性，可自由選擇理想的生活方式，屬於較抽象的概念。</p>
+          <p><b>人權</b>：生而為人所享有的各種權利，與生俱來、不可或缺、不可剝奪，可用具體條例保障。</p>
+        </div>
+        <div class="rule">
+          <h3>2. 世界人權宣言</h3>
+          <p><b>1948 年</b>由聯合國發表。強調每個人享有基本人權，不因國籍、種族、性別、宗教、語言或財產等因素而不同。</p>
+          <p>核心精神：禁止歧視與不公平對待，透過保障人權來維護人性尊嚴。</p>
+        </div>
+        <div class="rule">
+          <h3>3. 五個性別概念</h3>
+          <ul>
+            <li><b>生理性別</b>：依身體結構等區別。</li>
+            <li><b>社會性別</b>：社會形塑不同性別的行為特質。</li>
+            <li><b>性別刻板印象</b>：對性別特質先入為主、固定僵化。</li>
+            <li><b>性別偏見</b>：對特定性別抱持負面態度。</li>
+            <li><b>性別歧視</b>：因性別受到不公平對待、權益受損。</li>
+          </ul>
+        </div>
+        <div class="rule">
+          <h3>4. 性平三法怎麼分？</h3>
+          <ul>
+            <li><b>性別平等教育法</b>：校園性別事件。</li>
+            <li><b>性別平等工作法</b>：工作職場的性別不平等、性騷擾。</li>
+            <li><b>性騷擾防治法</b>：校園、職場以外的性騷擾事件。</li>
+          </ul>
+        </div>
+        <div class="rule">
+          <h3>5. 性騷擾 vs. 性侵害</h3>
+          <p><b>性騷擾</b>：以明示或暗示方式，從事不受歡迎且具有性意味或性別歧視的言詞或行為，影響他人學習、工作的權益。</p>
+          <p><b>性侵害</b>：以強暴、脅迫、恐嚇或其他違反被害人意願的方法，與其發生性行為。</p>
+        </div>
+        <div class="rule">
+          <h3>6. 校園性別事件處理流程</h3>
+          <p><b>①</b> 被害人（或其父母）／檢舉人申請調查或檢舉 → <b>②</b> 學務處（或教導處）受理 → <b>③</b> 移送性別平等教育委員會調查 → <b>④</b> 彙報教育主管機關。</p>
+        </div>
+      </div>
+      <div class="note" style="margin-top:14px"><b>考試判斷口訣：</b>先問「有沒有真的造成不公平待遇？」如果只有固定想法，多半是刻板印象；有負面評價是偏見；已經因此限制、拒絕或損害權益，才進一步成為歧視。</div>
+    </section>
+  </main>
+</div>
+
+<script>
+const Q = (cat,q,ans,wrong,why)=>({cat,q,ans,wrong,why});
+
+const banks = {
+dignity:[
+ Q("人性尊嚴／人權","下列何者最符合「人性尊嚴」的概念？","每個人都是應受尊重、具有價值與獨特性的個體",["只有對社會有貢獻的人才值得尊重","人只能選擇社會期待的生活方式","人性尊嚴只存在於法律條文中"],"人性尊嚴強調每個人都應受尊重，具有價值與獨特性，也能自由選擇理想的生活方式。"),
+ Q("人性尊嚴／人權","下列哪一項是「人權」的重要特徵？","與生俱來、不可或缺且不可剝奪",["必須成年後才取得","只有公民才享有","可由他人任意取消"],"課文將人權說明為生而為人所享有的各種權利，具有與生俱來、不可或缺、不可剝奪的特徵。"),
+ Q("人性尊嚴／人權","人性尊嚴與人權的關係，何者正確？","保障人權可以維護人性尊嚴",["人性尊嚴與人權完全無關","只有先放棄人權才能維護尊嚴","人權比人性尊嚴更抽象，無法落實"],"人性尊嚴較抽象；人權可透過具體條例落實。保障人權，是維護人性尊嚴的重要方式。"),
+ Q("人性尊嚴／人權","下列哪一個比較屬於「人權」的具體例子？","工作與受教育的權利",["每個人具有獨特價值的想法","尊重每一個人的抽象理念","認為人人都值得被尊重"],"工作、教育、生命與自由等，是課文列舉的具體人權。")
+],
+udhr:[
+ Q("世界人權宣言","聯合國於哪一年發表《世界人權宣言》？","1948 年",["1945 年","1966 年","1989 年"],"課文指出，1948 年聯合國發表《世界人權宣言》。"),
+ Q("世界人權宣言","《世界人權宣言》強調基本人權不應因何種因素而不同？","國籍、種族、性別、宗教、語言或財產等",["考試成績高低","是否擁有智慧型手機","個人喜歡的運動種類"],"宣言強調基本人權具有普遍性，不因國籍、種族、性別、宗教、語言或財產等因素而不同。"),
+ Q("世界人權宣言","《世界人權宣言》所呈現的核心精神，最接近下列何者？","禁止歧視與不公平對待，逐一保障基本權利",["依財產多寡分配基本權利","不同國籍的人享有不同程度人權","只有民主國家的人民才有人權"],"課文強調人生而平等，禁止歧視與不公平對待，目的在維護人性尊嚴。"),
+ Q("世界人權宣言","現代民主國家常以何種方式規範基本人權保障？","將基本人權保障規範在憲法中，並制定法律約束侵權行為",["只依靠個人道德判斷","完全不需要法律","只交由私人團體處理"],"課文指出，現代民主國家多將基本人權保障規範在憲法中，並以法律約束或制裁侵害人權的行為。")
+],
+gender:[
+ Q("性別概念","依身體結構來區別性別，屬於哪一個概念？","生理性別",["社會性別","性別刻板印象","性別偏見"],"生理性別是以身體結構等生理差異來區別性別。"),
+ Q("性別概念","「男生應該勇敢堅強，女生應該溫柔秀氣」最直接反映哪個概念？","社會性別",["生理性別","性別歧視","人權宣言"],"社會性別是社會形塑不同性別的行為特質與期待。若形成固定僵化判斷，則會進一步成為性別刻板印象。"),
+ Q("性別概念","「男生邏輯能力一定比較好，所以工程師應該由男生擔任」主要反映哪一概念？","性別刻板印象",["生理性別","人性尊嚴","性別平等工作法"],"把某種能力固定套在特定性別上，是先入為主、固定僵化的性別刻板印象。"),
+ Q("性別概念","「我就是不喜歡女性主管，覺得她們能力一定比較差」最符合哪一概念？","性別偏見",["性別歧視","生理性別","社會性別"],"性別偏見是對特定性別抱持負面態度；若進一步造成不公平待遇或權益受損，才成為性別歧視。"),
+ Q("性別概念","公司只因求職者是女性就拒絕錄用，即使能力符合需求。這最符合哪一概念？","性別歧視",["性別偏見","社會性別","生理性別"],"已因性別而遭到不公平對待並損害就業權益，屬於性別歧視。"),
+ Q("性別概念","下列哪一組由「想法」到「實際權益受損」的程度排列較合理？","性別刻板印象／偏見 → 性別歧視",["性別歧視 → 生理性別","生理性別 → 人權 → 性別偏見","人性尊嚴 → 生理性別"],"刻板印象是固定僵化的認知，偏見是負面態度；若因此產生不公平對待、造成權益受損，就形成歧視。")
+],
+laws:[
+ Q("性平三法","學生在校園中遭遇性騷擾，主要應依哪一部法律處理？","性別平等教育法",["性別平等工作法","性騷擾防治法","世界人權宣言"],"校園性別事件主要適用《性別平等教育法》。"),
+ Q("性平三法","公司雇主在招募時因性別而給予不同待遇，主要涉及哪一部法律？","性別平等工作法",["性別平等教育法","性騷擾防治法","世界人權宣言"],"工作職場的性別不平等與相關性騷擾，主要由《性別平等工作法》規範。"),
+ Q("性平三法","在校園、職場以外的場所發生性騷擾事件，主要適用哪一部法律？","性騷擾防治法",["性別平等教育法","性別平等工作法","教育基本法"],"課文整理：校園、職場以外的性騷擾事件，主要適用《性騷擾防治法》。"),
+ Q("性平三法","下列「事件場所—法律」配對何者正確？","校園性別事件—性別平等教育法",["職場性別事件—性別平等教育法","校園外一般性騷擾—性別平等工作法","職場性騷擾—性騷擾防治法"],"判斷性平三法先看場域：校園→性別平等教育法；職場→性別平等工作法；其他場域→性騷擾防治法。"),
+ Q("性平三法","《性別平等工作法》主要保障下列哪一種情況？","雇主不得因性別造成招募、薪資或工作規定上的不平等待遇",["規定校園課程設計","處理所有校外交通事故","規定聯合國會員資格"],"課文指出，性別平等工作法保障工作權的性別平等，禁止因性別而有就業歧視或同工不同酬等情形。"),
+ Q("性平三法","《性別平等教育法》在教育環境中的主要精神為何？","建立尊重多元性別差異與性別平等的教育環境",["依性別分配不同教育資源","限制特定性別參與學校活動","只處理教師的勞動薪資"],"課文指出，學校在招生、就學許可、課程與活動設計等方面，不得因性別而有差別待遇。")
+],
+harassment:[
+ Q("性騷擾／性侵害","以明示或暗示方式，做出不受歡迎且具有性意味或性別歧視的言詞或行為，較符合哪一概念？","性騷擾",["性侵害","生理性別","社會性別"],"這是課文對性騷擾的核心說明：不受歡迎、具有性意味或性別歧視，並影響他人權益。"),
+ Q("性騷擾／性侵害","以強暴、脅迫、恐嚇或其他違反被害人意願的方法與其發生性行為，屬於什麼？","性侵害",["性騷擾","性別刻板印象","社會性別"],"課文將以強暴、脅迫、恐嚇或其他違反被害人意願的方法發生性行為，界定為性侵害。"),
+ Q("性騷擾／性侵害","面對性騷擾或性侵害，下列態度何者符合課文精神？","尊重身體自主，並透過適當法律與救濟管道保障被害人",["要求被害人保持沉默","公開散布被害人的私密資訊","認為只要是玩笑就不需尊重對方感受"],"課文強調相互尊重、身體自主，以及透過法律與救濟管道處理性騷擾或性侵害。"),
+ Q("性騷擾／性侵害","「Me Too」運動在課文中主要呈現哪一項訴求？","反性騷擾、反性侵，並捍衛弱勢人權",["取消所有性別相關法律","鼓勵受害者保持沉默","只討論娛樂產業的薪資"],"課文說明 Me Too 運動帶動多國反性騷擾、反性侵社會運動，並凸顯對弱勢人權的保障。")
+],
+process:[
+ Q("校園處理流程","校園性別事件中，被害人或檢舉人提出申請後，下一個主要步驟是什麼？","由學務處（或教導處）受理",["直接彙報教育主管機關","直接交由法院判決","先由性別平等教育委員會自行結案"],"課文流程：申請調查或檢舉 → 學務處（或教導處）受理 → 移送性別平等教育委員會調查 → 彙報教育主管機關。"),
+ Q("校園處理流程","學務處（或教導處）受理校園性別事件後，下一步為何？","移送性別平等教育委員會調查",["直接公布被害人姓名","直接結案","移送公司人事部門"],"受理後應移送性別平等教育委員會調查。"),
+ Q("校園處理流程","校園性別事件處理流程的最後一個步驟是什麼？","彙報教育主管機關",["移送性別平等教育委員會調查","學務處受理","被害人提出申請"],"依課本流程，最後為彙報教育主管機關。"),
+ Q("校園處理流程","下列哪一個校園性別事件處理順序正確？","申請調查或檢舉 → 學務處受理 → 性平會調查 → 彙報教育主管機關",["性平會調查 → 申請檢舉 → 學務處受理 → 結案","學務處受理 → 彙報主管機關 → 申請檢舉 → 性平會調查","申請檢舉 → 法院判決 → 學務處受理 → 性平會調查"],"這是課本圖 3-2-6 所列的四步驟處理流程。")
+],
+scenario:[
+ Q("生活情境","老師說：「女生比較細心，所以女生都應該當幼兒園老師。」這句話最主要的問題是什麼？","把某種人格特質與職業固定套在特定性別，形成性別刻板印象",["只是描述生理性別差異","完全沒有涉及性別觀念","是在保障女性的工作權"],"將「細心」與特定性別、職業固定連結，是典型的性別刻板印象。"),
+ Q("生活情境","某公司規定同樣職務、同樣工作內容，女性薪資一律較低。最適合的判斷是？","已造成性別歧視，並涉及職場性別平等",["只是個人性別偏見，沒有權益受損","屬於生理性別差異","屬於校園性別事件"],"薪資權益已因性別受到不公平對待，是性別歧視；場域在職場，也涉及性別平等工作法。"),
+ Q("生活情境","同學因另一位同學的性別，而認定對方「一定不適合學理工」，但尚未限制其權利。最接近哪一概念？","性別刻板印象",["性別歧視","性侵害","生理性別"],"這是對特定性別能力的固定僵化認知；若進一步因此剝奪機會或權益，才形成歧視。"),
+ Q("生活情境","學校只因學生的性別而拒絕其參加某項課程，最適合的判斷是？","造成性別歧視，且可能違反校園性別平等的精神",["只是生理性別的描述","只屬於個人偏好，與權益無關","因發生在學校，所以不屬於人權問題"],"學生受教育與參與課程的機會已因性別而受到不公平限制，屬於權益受損。"),
+ Q("生活情境","有人因身心障礙而被拒絕進入公共場所，最能連結本章哪一核心觀念？","每個人都應受到尊重，基本人權不應因個人條件而被不公平剝奪",["只有健康者才具有人性尊嚴","人權可依身體狀況任意取消","這只與性別平等有關"],"課文以人性尊嚴與人權保障說明：每個人都應受到尊重，基本權利應獲普遍保障。"),
+ Q("生活情境","某人在捷運上對陌生人做出不受歡迎、帶有性意味的言語騷擾。依課本分類，最應先聯想到哪一部法律？","性騷擾防治法",["性別平等教育法","性別平等工作法","性別平等教育委員會只能處理所有事件"],"捷運不屬於校園或職場情境；課本整理此類其他場域性騷擾主要適用性騷擾防治法。")
+]
+};
+
+let game=[], idx=0, score=0, answered=false, records=[];
+
+function shuffle(a){
+  const x=[...a];
+  for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}
+  return x;
+}
+function pick(arr,n){return shuffle(arr).slice(0,n)}
+function buildGame(){
+  // 保證核心範圍都有出現，再從全題庫補足 15 題
+  let chosen=[
+    ...pick(banks.dignity,2),
+    ...pick(banks.udhr,2),
+    ...pick(banks.gender,3),
+    ...pick(banks.laws,3),
+    ...pick(banks.harassment,2),
+    ...pick(banks.process,1),
+    ...pick(banks.scenario,2)
+  ];
+  return shuffle(chosen);
+}
+function startGame(){
+  game=buildGame(); idx=0; score=0; records=[]; answered=false;
+  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  renderQ();
+}
+function renderQ(){
+  answered=false;
+  const q=game[idx];
+  document.getElementById("qno").textContent=`第 ${idx+1} / ${game.length} 題`;
+  document.getElementById("scoreNow").textContent=`目前 ${score} 分`;
+  document.getElementById("bar").style.width=`${idx/game.length*100}%`;
+  document.getElementById("category").textContent=q.cat;
+  document.getElementById("question").textContent=q.q;
+  const choices=shuffle([q.ans,...q.wrong]);
+  const box=document.getElementById("choices"); box.innerHTML="";
+  choices.forEach(c=>{
+    const b=document.createElement("button"); b.className="choice"; b.textContent=c;
+    b.onclick=()=>answer(b,c,q); box.appendChild(b);
+  });
+  document.getElementById("feedback").className="feedback hidden";
+  document.getElementById("nextBtn").classList.add("hidden");
+}
+function answer(btn,choice,q){
+  if(answered)return; answered=true;
+  const ok=choice===q.ans; if(ok)score++;
+  [...document.querySelectorAll(".choice")].forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===q.ans)b.classList.add("correct");
+  });
+  if(!ok)btn.classList.add("wrong");
+  records.push({q:q.q,choice,ans:q.ans,ok,why:q.why,cat:q.cat});
+  const f=document.getElementById("feedback");
+  f.className="feedback "+(ok?"ok":"no");
+  f.innerHTML=`<b>${ok?"✅ 答對了！":"❌ 這題再記一下"}</b>${q.why}${ok?"":`<br><b>正確答案：</b>${q.ans}`}`;
+  document.getElementById("scoreNow").textContent=`目前 ${score} 分`;
+  document.getElementById("bar").style.width=`${(idx+1)/game.length*100}%`;
+  const nb=document.getElementById("nextBtn");
+  nb.textContent=idx===game.length-1?"看成績":"下一題";
+  nb.classList.remove("hidden");
+}
+function nextQuestion(){
+  idx++;
+  if(idx>=game.length){showResult();return}
+  renderQ();
+}
+function showResult(){
+  document.getElementById("quiz").classList.add("hidden");
+  const r=document.getElementById("result"); r.classList.remove("hidden");
+  const pct=Math.round(score/game.length*100);
+  let msg=pct>=90?"掌握得很完整！":pct>=75?"整體不錯，再補強錯題就很穩。":pct>=60?"基礎有了，建議先看錯題解析再挑戰一次。":"先到「重點整理」複習，再挑戰一次會進步很快。";
+  const wrong=records.filter(x=>!x.ok);
+  r.innerHTML=`<div class="score">
+    <div class="big">${score} / ${game.length}</div>
+    <h2>${pct} 分</h2><p style="color:var(--muted)">${msg}</p>
+    <button class="primary" onclick="startGame()">再挑戰一次</button>
+    <button class="secondary" onclick="showPage('rules')" style="margin-left:6px">看重點整理</button>
+  </div>
+  ${wrong.length?`<h3 style="margin-top:24px">📝 錯題複習（${wrong.length} 題）</h3>
+  <div class="review">${wrong.map((x,i)=>`<div class="review-item"><span class="pill">${x.cat}</span><br><b>${i+1}. ${x.q}</b><br>你的答案：<strong>${x.choice}</strong><br>正確答案：<b>${x.ans}</b><br><span style="color:#5c687b">${x.why}</span></div>`).join("")}</div>`:
+  `<div class="feedback ok" style="margin-top:20px"><b>🏆 全對！</b>這一回合沒有錯題。</div>`}`;
+}
+function showPage(page){
+  document.getElementById("home").classList.toggle("hidden",page!=="home");
+  document.getElementById("rules").classList.toggle("hidden",page!=="rules");
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.page===page));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>showPage(t.dataset.page));
+</script>
+</body>
+</html>
